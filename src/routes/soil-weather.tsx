@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Loader2, RotateCcw, Sparkles as _unused } from "lucide-react";
+import { Loader2, RotateCcw } from "lucide-react";
 import { Brain, Droplets, Thermometer, Wind, Sun } from "lucide-react";
 import { toast } from "sonner";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,7 +15,6 @@ import { ForecastStrip, SectionTitle, StatCard } from "@/components/agri/Widgets
 import { useFarm } from "@/lib/farm-store";
 import { CURRENT_WEATHER, DEFAULT_SOIL, FORECAST, SOIL_TYPES, type SoilInput, type SoilType } from "@/lib/demo-data";
 
-void _unused;
 
 export const Route = createFileRoute("/soil-weather")({
   head: () => ({
