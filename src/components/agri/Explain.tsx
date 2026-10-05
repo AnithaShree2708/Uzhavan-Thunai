@@ -34,5 +34,5 @@ export function Explain({ factors, summary }: { factors: Factor[]; summary?: str
 
 export function PriorityBadge({ p }: { p: Priority }) {
   const v = p === "High" ? "destructive" : p === "Medium" ? "warning" : "success";
-  return <Badge variant={v as "destructive"}>{p} priority</Badge>;
+  return <Badge variant={v}>{p} priority</Badge>;
 }
