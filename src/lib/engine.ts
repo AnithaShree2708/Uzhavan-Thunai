@@ -87,15 +87,15 @@ export interface IrrigationRec {
 }
 
 export function recommendIrrigation(s: SoilInput): IrrigationRec {
-  const next48 = FORECAST[0].rainMm + FORECAST[1].rainMm;
-  const next72Chance = Math.max(FORECAST[0].rainChance, FORECAST[1].rainChance, FORECAST[2].rainChance);
+  const next48 = FORECAST[0]!.rainMm + FORECAST[1]!.rainMm;
+  const next72Chance = Math.max(FORECAST[0]!.rainChance, FORECAST[1]!.rainChance, FORECAST[2]!.rainChance);
   const deficit = Math.max(0, 40 - s.moisture); // target 40%
   const heat = s.temperature > 32 ? 1.25 : s.temperature < 22 ? 0.8 : 1;
   let duration = Math.round(deficit * 2.2 * heat - next48 * 1.5);
   duration = Math.max(0, Math.min(90, duration));
   const priority: Priority = s.moisture < 22 ? "High" : s.moisture < 32 ? "Medium" : "Low";
   const needed = duration > 5 && !(next72Chance > 75 && s.moisture > 28);
-  const day = s.moisture < 22 ? FORECAST[0] : FORECAST[1];
+  const day = s.moisture < 22 ? FORECAST[0]! : FORECAST[1]!;
   const when = needed ? `${day.day}, ${day.date} · 06:00 AM` : "Not required in next 48h";
   const reason = !needed
     ? `Soil moisture (${s.moisture}%) is adequate and rain is likely soon — skip irrigation to save water.`

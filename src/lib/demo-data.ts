@@ -51,33 +51,46 @@ export const CURRENT_WEATHER = {
   uvIndex: 7,
 };
 
-const conds: DayForecast["condition"][] = ["Partly Cloudy", "Sunny", "Cloudy", "Light Rain", "Rain", "Thunderstorm", "Partly Cloudy"];
-const rain = [0, 0, 2, 8, 18, 26, 4];
-const chance = [10, 5, 30, 60, 80, 90, 35];
-const highs = [31, 33, 31, 29, 27, 26, 29];
+const DAYS: { condition: DayForecast["condition"]; high: number; rainMm: number; rainChance: number }[] = [
+  { condition: "Partly Cloudy", high: 31, rainMm: 0, rainChance: 10 },
+  { condition: "Sunny", high: 33, rainMm: 0, rainChance: 5 },
+  { condition: "Cloudy", high: 31, rainMm: 2, rainChance: 30 },
+  { condition: "Light Rain", high: 29, rainMm: 8, rainChance: 60 },
+  { condition: "Rain", high: 27, rainMm: 18, rainChance: 80 },
+  { condition: "Thunderstorm", high: 26, rainMm: 26, rainChance: 90 },
+  { condition: "Partly Cloudy", high: 29, rainMm: 4, rainChance: 35 },
+];
 
-export const FORECAST: DayForecast[] = Array.from({ length: 7 }, (_, i) => {
+export const FORECAST: DayForecast[] = DAYS.map((w, i) => {
   const d = new Date(2026, 9, 5 + i);
   return {
     day: d.toLocaleDateString("en-US", { weekday: "short" }),
     date: d.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
-    condition: conds[i],
-    high: highs[i],
-    low: highs[i] - 7,
-    rainMm: rain[i],
-    rainChance: chance[i],
-    humidity: 62 + chance[i] / 4,
+    condition: w.condition,
+    high: w.high,
+    low: w.high - 7,
+    rainMm: w.rainMm,
+    rainChance: w.rainChance,
+    humidity: 62 + w.rainChance / 4,
   };
 });
 
 export const HISTORY_MONTHS = ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"];
 
-export const HISTORY = HISTORY_MONTHS.map((month, i) => ({
-  month,
-  moisture: [44, 41, 35, 30, 26, 24, 27, 33, 38, 42, 39, 32][i],
-  rainfall: [180, 95, 22, 12, 15, 30, 55, 70, 95, 120, 140, 110][i],
-  irrigation: [8, 14, 32, 40, 46, 48, 38, 26, 18, 12, 16, 22][i],
-}));
+export const HISTORY = [
+  { month: "Nov", moisture: 44, rainfall: 180, irrigation: 8 },
+  { month: "Dec", moisture: 41, rainfall: 95, irrigation: 14 },
+  { month: "Jan", moisture: 35, rainfall: 22, irrigation: 32 },
+  { month: "Feb", moisture: 30, rainfall: 12, irrigation: 40 },
+  { month: "Mar", moisture: 26, rainfall: 15, irrigation: 46 },
+  { month: "Apr", moisture: 24, rainfall: 30, irrigation: 48 },
+  { month: "May", moisture: 27, rainfall: 55, irrigation: 38 },
+  { month: "Jun", moisture: 33, rainfall: 70, irrigation: 26 },
+  { month: "Jul", moisture: 38, rainfall: 95, irrigation: 18 },
+  { month: "Aug", moisture: 42, rainfall: 120, irrigation: 12 },
+  { month: "Sep", moisture: 39, rainfall: 140, irrigation: 16 },
+  { month: "Oct", moisture: 32, rainfall: 110, irrigation: 22 },
+];
 
 export const YIELD_HISTORY = [
   { season: "Kharif '22", rice: 4.1, groundnut: 1.6, maize: 3.2 },

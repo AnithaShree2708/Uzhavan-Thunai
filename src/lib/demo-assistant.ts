@@ -15,7 +15,7 @@ export function demoReply(q: string, ctx: { soil: SoilInput; crops: CropRec[]; i
   const t = q.toLowerCase();
   const { soil, crops, irrigation } = ctx;
   if (/crop|grow|plant|sow/.test(t)) {
-    return `Based on your inputs, **${crops[0].crop}** scores highest (${crops[0].score}/100), followed by ${crops[1].crop} (${crops[1].score}) and ${crops[2].crop} (${crops[2].score}).\n\n${crops[0].reason}`;
+    return `Based on your inputs, **${crops[0]!.crop}** scores highest (${crops[0]!.score}/100), followed by ${crops[1]!.crop} (${crops[1]!.score}) and ${crops[2]!.crop} (${crops[2]!.score}).\n\n${crops[0]!.reason}`;
   }
   if (/irrigat|water/.test(t)) {
     return irrigation.needed

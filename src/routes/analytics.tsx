@@ -42,7 +42,7 @@ function Analytics() {
   const totalRain = HISTORY.reduce((s, h) => s + h.rainfall, 0);
   const totalIrr = HISTORY.reduce((s, h) => s + h.irrigation, 0);
   const avgMoist = Math.round(HISTORY.reduce((s, h) => s + h.moisture, 0) / HISTORY.length);
-  const first = YIELD_HISTORY[0].rice, last = YIELD_HISTORY.at(-1)!.rice;
+  const first = YIELD_HISTORY[0]!.rice, last = YIELD_HISTORY.at(-1)!.rice;
   return (
     <div>
       <PageHeader title="Historical Analytics" subtitle="Seeded sample history for Demo Field A (last 12 months and 7 seasons).">
