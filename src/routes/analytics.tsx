@@ -11,9 +11,11 @@ import { Droplets, CloudRain, Waves, TrendingUp } from "lucide-react";
 export const Route = createFileRoute("/analytics")({
   head: () => ({
     meta: [
-      { title: "Historical Analytics — AgriSense AI" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Historical Analytics — Uzhavan Thunai" },
       { name: "description", content: "Soil moisture, rainfall, irrigation and crop yield trends for the demo field." },
-      { property: "og:title", content: "Field Analytics — AgriSense AI" },
+      { property: "og:title", content: "Field Analytics — Uzhavan Thunai" },
       { property: "og:description", content: "12-month field history and multi-season yield trends." },
     ],
   }),
