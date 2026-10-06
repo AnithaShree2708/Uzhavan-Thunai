@@ -57,7 +57,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <div className="ml-auto hidden sm:block xl:hidden 2xl:block">
+          <div className="ml-auto hidden sm:block">
             <DemoBadge />
           </div>
           <Button variant="ghost" size="icon" className="ml-auto shrink-0 sm:ml-0 xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
