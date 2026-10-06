@@ -1,70 +1,62 @@
-# AgriSense Insights
+# 🌾 Uzhavan Thunai
 
-Build a polished college-workshop MVP web application called "AgriSense AI — Smart Farming Decision Support Platform".
+### Smart Farming Decision Support System
 
-Problem statement:
-Build a decision-support platform combining soil, weather and crop data to recommend crop choices, irrigation schedules and farming actions, with explainable recommendations and historical field analytics.
+Uzhavan Thunai is a smart farming platform that combines soil, weather, and crop data to help farmers make better agricultural decisions.
 
-Goal:
-Create a convincing demo-ready web app for an S.A. Engineering College GenAI workshop. It should feel like a real agricultural AI dashboard, not a generic template.
+## 🚀 Live Demo
 
-Core features:
-1. Dashboard overview with farm status, soil moisture, temperature, humidity, rainfall forecast, current crop, irrigation status, and a clear AI recommendation summary.
-2. Soil Data page/section with inputs for soil moisture, pH, nitrogen, phosphorus, potassium, temperature and soil type. Include a "Generate Recommendation" action.
-3. Weather section with current weather and a 7-day forecast using realistic mock/demo data. Clearly label demo data where appropriate; do not pretend live API data exists.
-4. Crop Recommendation: recommend suitable crops based on the entered soil/weather values. Show top 3 crops with suitability scores and short reasons.
-5. Irrigation Schedule: show recommended watering date/time, duration, priority and reason, using soil moisture and weather conditions.
-6. AI Explainability: for every recommendation, provide a simple "Why this recommendation?" explanation showing the important factors used.
-7. Historical Analytics: charts for soil moisture, rainfall, irrigation and crop performance/yield trends using realistic sample historical data.
-8. Farming Actions: actionable cards such as irrigation, fertilizer check, pest monitoring and weather precautions.
-9. Add a simple AI assistant/chat panel with predefined/demo responses about crop choice, irrigation and soil health. Make it clear that this is a demo assistant if no external AI API is connected.
-10. Responsive navigation with Dashboard, Soil & Weather, Crop Recommendation, Irrigation, Analytics and AI Assistant.
-11. Include a small "Data source / Demo mode" indicator so workshop judges understand the current prototype uses simulated data unless an API is connected.
+👉 [Visit Uzhavan Thunai](https://uzhavan-thunai.vercel.app/)
 
-Design:
-- Modern agricultural technology aesthetic.
-- Clean professional dashboard suitable for a college project presentation.
-- Use natural green/earth tones with accessible contrast, subtle gradients, cards, icons and charts.
-- Avoid excessive animations.
-- Mobile responsive.
-- Strong visual hierarchy and polished empty/loading/error states.
-- Include a hero/header area saying "Smarter Decisions. Healthier Crops." and a concise explanation of the platform.
-- Add a prominent "Analyze Farm" CTA.
-- Use shadcn/ui components and clean TypeScript architecture.
+## ✨ Features
 
-Functional behavior:
-- Soil inputs should update recommendation results locally using a transparent rule-based demo scoring model.
-- Explain the score using factors such as soil pH, NPK, moisture, temperature and rainfall.
-- Irrigation recommendation should respond to moisture and forecast conditions.
-- Analytics should use realistic seeded mock data.
-- No need to require authentication for the first MVP.
-- Keep all demo data clearly separated so a real weather/soil/AI API can be connected later.
-- Include a "Future integrations" note mentioning weather API, soil sensor/IoT data, ML crop model and LLM explanation layer.
+- 🌱 Soil & Weather Analysis
+- 🌾 Crop Recommendation
+- 💧 Smart Irrigation Suggestions
+- 📊 Farm Analytics
+- 🤖 AI Assistant
+- 📋 Farming Action Recommendations
+- 🌦️ Weather Forecast
+- 🧪 Soil pH and NPK Analysis
 
-Also include a small About/Methodology section explaining the pipeline:
-Soil + Weather + Crop Data → Data Processing → Recommendation Engine → Explainable Recommendation → Farmer Action → Historical Analytics.
+## 🎯 Objective
 
-Make the app presentation-ready and ensure all main navigation routes/sections actually work.
+The main objective of Uzhavan Thunai is to provide farmers with simple and data-driven recommendations for crop selection, irrigation, soil management, and farming activities.
 
-This project was built with [Lovable](https://lovable.dev).
+## 🛠️ Key Modules
 
-**Live app**: https://farm-logic-core.lovable.app
+1. **Dashboard**
+   - View farm conditions and important recommendations.
 
-## Build with Lovable
+2. **Soil & Weather**
+   - Analyze soil and weather conditions.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/4c062c34-45c0-4017-87ff-f85da1f2a496).
+3. **Crop Recommendation**
+   - Recommend suitable crops based on current conditions.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+4. **Irrigation**
+   - Provide irrigation recommendations based on soil moisture and weather.
 
-## Development
+5. **Analytics**
+   - View farming-related data and insights.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+6. **AI Assistant**
+   - Get intelligent assistance for farming decisions.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## 🌍 Benefits
+
+- Helps farmers make informed decisions
+- Supports efficient water usage
+- Improves crop selection
+- Provides weather-based farming guidance
+- Makes agricultural data easier to understand
+
+## 🔗 Live Website
+
+https://uzhavan-thunai.vercel.app/
+
+## 📌 Project Status
+
+Prototype developed for demonstration purposes.
+
+> **Note:** The data currently used in the prototype is simulated for demonstration.
