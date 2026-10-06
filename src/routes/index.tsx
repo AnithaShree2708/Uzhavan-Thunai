@@ -27,7 +27,7 @@ function Dashboard() {
   const { soil, crops, irrigation, actions, markAnalyzed, analyzedAt } = useFarm();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const top = crops[0];
+  const top = crops[0]!;
 
   const analyze = () => {
     setLoading(true);

@@ -83,7 +83,7 @@ function SoilWeather() {
                     <span className="w-10 text-xs text-muted-foreground">{f.unit}</span>
                   </div>
                 </div>
-                <Slider value={[draft[f.key]]} min={f.min} max={f.max} step={f.step} onValueChange={([v]) => setNum(f.key, v)} />
+                <Slider value={[draft[f.key]]} min={f.min} max={f.max} step={f.step} onValueChange={([v]) => setNum(f.key, v!)} />
               </div>
             ))}
             <div className="space-y-2">
