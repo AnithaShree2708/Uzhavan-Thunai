@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowRight, Droplets, Thermometer, Wind, CloudRain, Sprout, Waves, Brain, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { BrandLogo } from "@/components/agri/BrandLogo";
 import hero from "@/assets/hero-farm.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,9 +15,11 @@ import { Explain, PriorityBadge } from "@/components/agri/Explain";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dashboard — AgriSense AI" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Dashboard — Uzhavan Thunai" },
       { name: "description", content: "Farm status, weather, irrigation and explainable AI crop recommendations at a glance." },
-      { property: "og:title", content: "AgriSense AI — Smarter Decisions. Healthier Crops." },
+      { property: "og:title", content: "Uzhavan Thunai — Smarter Decisions. Healthier Crops." },
       { property: "og:description", content: "Decision support combining soil, weather and crop data with explainable recommendations." },
     ],
   }),
@@ -45,10 +48,11 @@ function Dashboard() {
         <img src={hero} alt="Terraced green farmland at sunrise" width={1600} height={800} className="absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity" />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
         <div className="relative max-w-2xl px-6 py-14 sm:px-10 sm:py-20">
+          <BrandLogo className="mb-4 h-24 w-24 sm:h-28 sm:w-28" />
           <Badge className="mb-4 bg-accent text-accent-foreground hover:bg-accent">Smart Farming Decision Support</Badge>
           <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">Smarter Decisions.<br />Healthier Crops.</h1>
           <p className="mt-4 text-base opacity-90 sm:text-lg">
-            AgriSense AI combines soil, weather and crop data to recommend what to grow, when to irrigate and which actions to take — with a clear explanation for every decision.
+            Uzhavan Thunai combines soil, weather and crop data to recommend what to grow, when to irrigate and which actions to take — with a clear explanation for every decision.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button size="lg" onClick={analyze} disabled={loading} className="bg-accent text-accent-foreground hover:bg-accent/90">

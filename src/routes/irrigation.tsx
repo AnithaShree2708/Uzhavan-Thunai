@@ -12,9 +12,11 @@ import { FORECAST } from "@/lib/demo-data";
 export const Route = createFileRoute("/irrigation")({
   head: () => ({
     meta: [
-      { title: "Irrigation Schedule — AgriSense AI" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Irrigation Schedule — Uzhavan Thunai" },
       { name: "description", content: "Recommended watering time, duration and priority based on soil moisture and rain forecast." },
-      { property: "og:title", content: "Irrigation Schedule — AgriSense AI" },
+      { property: "og:title", content: "Irrigation Schedule — Uzhavan Thunai" },
       { property: "og:description", content: "Water-saving irrigation schedule driven by soil moisture and weather." },
     ],
   }),

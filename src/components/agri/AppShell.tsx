@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import { Sprout, Menu, X, FlaskConical } from "lucide-react";
+import { Menu, X, FlaskConical } from "lucide-react";
+import { BrandLogo } from "./BrandLogo";
+import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 
 const NAV = [
@@ -36,21 +38,19 @@ export function AppShell({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground">
-              <Sprout className="h-5 w-5" />
-            </span>
-            <span className="font-display text-lg font-semibold leading-none">
-              AgriSense <span className="text-primary">AI</span>
+          <Link to="/" className="flex shrink-0 items-center gap-2" aria-label="Uzhavan Thunai home">
+            <BrandLogo className="h-12 w-12" />
+            <span className="font-display text-base font-semibold leading-tight sm:text-lg">
+              Uzhavan <span className="text-primary">Thunai</span>
             </span>
           </Link>
-          <nav className="ml-6 hidden flex-1 items-center gap-1 xl:flex">
+          <nav className="ml-2 hidden flex-1 items-center xl:flex">
             {NAV.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 activeOptions={{ exact: true }}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                className="whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                 activeProps={{ className: "bg-secondary text-foreground" }}
               >
                 {n.label}
@@ -60,9 +60,9 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="ml-auto hidden sm:block">
             <DemoBadge />
           </div>
-          <button className="ml-auto rounded-md p-2 sm:ml-0 xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <Button variant="ghost" size="icon" className="ml-auto shrink-0 sm:ml-0 xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          </Button>
         </div>
         {open && (
           <nav className="border-t px-4 py-3 xl:hidden">
@@ -86,7 +86,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </header>
       <main className="mx-auto max-w-7xl px-4 py-8">{children}</main>
       <footer className="border-t py-6 text-center text-xs text-muted-foreground">
-        AgriSense AI · S.A. Engineering College GenAI Workshop prototype · All data simulated for demonstration
+        Uzhavan Thunai · S.A. Engineering College GenAI Workshop prototype · All data simulated for demonstration
       </footer>
     </div>
   );

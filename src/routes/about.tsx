@@ -7,10 +7,12 @@ import { SectionTitle } from "@/components/agri/Widgets";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Methodology — AgriSense AI" },
-      { name: "description", content: "How AgriSense AI turns soil, weather and crop data into explainable farming recommendations." },
-      { property: "og:title", content: "Methodology & Pipeline — AgriSense AI" },
-      { property: "og:description", content: "Data pipeline, scoring model and future integrations of the AgriSense AI prototype." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Methodology — Uzhavan Thunai" },
+      { name: "description", content: "How Uzhavan Thunai turns soil, weather and crop data into explainable farming recommendations." },
+      { property: "og:title", content: "Methodology & Pipeline — Uzhavan Thunai" },
+      { property: "og:description", content: "Data pipeline, scoring model and future integrations of the Uzhavan Thunai prototype." },
     ],
   }),
   component: About,
@@ -35,7 +37,7 @@ const FUTURE = [
 function About() {
   return (
     <div>
-      <PageHeader title="About & Methodology" subtitle="AgriSense AI is a workshop prototype for S.A. Engineering College showing how GenAI-era decision support can help farmers act on data." />
+      <PageHeader title="About & Methodology" subtitle="Uzhavan Thunai is a workshop prototype for S.A. Engineering College showing how GenAI-era decision support can help farmers act on data." />
       <div className="flex flex-col items-stretch gap-3 lg:flex-row lg:items-center">
         {STEPS.map((s, i) => (
           <div key={s.t} className="flex flex-1 flex-col items-center gap-3 lg:flex-row">

@@ -10,9 +10,11 @@ import { totalForecastRain } from "@/lib/demo-data";
 export const Route = createFileRoute("/crops")({
   head: () => ({
     meta: [
-      { title: "Crop Recommendation — AgriSense AI" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Crop Recommendation — Uzhavan Thunai" },
       { name: "description", content: "Top 3 suitable crops with suitability scores and explainable factor breakdowns." },
-      { property: "og:title", content: "Crop Recommendation — AgriSense AI" },
+      { property: "og:title", content: "Crop Recommendation — Uzhavan Thunai" },
       { property: "og:description", content: "Explainable crop suitability scores from soil pH, NPK, moisture, temperature and rainfall." },
     ],
   }),

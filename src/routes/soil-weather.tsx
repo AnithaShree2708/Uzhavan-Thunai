@@ -19,9 +19,11 @@ import { CURRENT_WEATHER, DEFAULT_SOIL, FORECAST, SOIL_TYPES, type SoilInput, ty
 export const Route = createFileRoute("/soil-weather")({
   head: () => ({
     meta: [
-      { title: "Soil & Weather — AgriSense AI" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { title: "Soil & Weather — Uzhavan Thunai" },
       { name: "description", content: "Enter soil moisture, pH and NPK values and view current weather with a 7-day demo forecast." },
-      { property: "og:title", content: "Soil & Weather Inputs — AgriSense AI" },
+      { property: "og:title", content: "Soil & Weather Inputs — Uzhavan Thunai" },
       { property: "og:description", content: "Soil parameters and weather data that drive crop and irrigation recommendations." },
     ],
   }),
